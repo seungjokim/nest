@@ -12,8 +12,6 @@ FROM registry.access.redhat.com/ubi9/nodejs-20:1-24
 #RUN npm install  --save --legacy-peer-deps
 RUN npm install --save @nestjs/swagger
 
-RUN sudo chown -R 1001320000:0 "/opt/app-root/src/.npm"
-
 # Bundle app source
 COPY . .
 

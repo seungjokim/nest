@@ -12,6 +12,7 @@ FROM registry.access.redhat.com/ubi9/nodejs-20:1-24
 #RUN npm install  --save --legacy-peer-deps
 RUN npm install --save @nestjs/swagger
 RUN npm install gulp
+RUN npm install --save typescript ts-node
 
 # Bundle app source
 COPY . .

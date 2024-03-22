@@ -15,6 +15,7 @@ RUN npm install gulp
 RUN npm install --save typescript ts-node
 RUN npm install gulp-clean
 RUN npm install delete-empty
+RUN npm install cli-color
 
 # Bundle app source
 COPY . .

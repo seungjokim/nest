@@ -11,6 +11,7 @@ FROM registry.access.redhat.com/ubi9/nodejs-20:1-24
 #RUN ulimit -n 4096
 #RUN npm install  --save --legacy-peer-deps
 RUN npm install --save @nestjs/swagger
+RUN npm install gulp
 
 # Bundle app source
 COPY . .

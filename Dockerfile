@@ -16,12 +16,14 @@ RUN npm install --save typescript ts-node
 RUN npm install gulp-clean
 RUN npm install delete-empty
 RUN npm install cli-color
+RUN nest new project-name
 
 # Bundle app source
 COPY . .
 
 # Copy the .env and .env.development files
 #COPY .env .env.development ./
+WORKDIR project-name
 
 # Creates a "dist" folder with the production build
 #RUN npm run build
@@ -31,4 +33,4 @@ EXPOSE 3001
 
 # Start the server using the production build
 #CMD ["npm", "run", "start:prod"]
-#CMD ["npm", "run", "publish"]
+CMD ["npm", "run", "start"]

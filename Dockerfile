@@ -16,6 +16,7 @@ RUN npm install --save typescript ts-node
 RUN npm install gulp-clean
 RUN npm install delete-empty
 RUN npm install cli-color
+RUN npm i -g @nestjs/cli
 RUN nest new project-name
 
 # Bundle app source

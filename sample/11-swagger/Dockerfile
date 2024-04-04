@@ -9,7 +9,6 @@ ARG runnerWorkDir=/opt/app-root/src
 ##### build image #####
 #######################
 FROM registry.access.redhat.com/ubi9/nodejs-20:${builderVersion} as builder
-#RUN npm install
 
 ARG appDir
 #ARG distDir
@@ -19,6 +18,8 @@ WORKDIR ${appDir}
 # copy package.json & yarn.lock first to cache
 COPY package.json package-lock.json ./
 
+RUN npm install
+
 # install node_modules
 #RUN npm --frozen-lockfile --prefer-offline --silent
 
@@ -26,7 +27,7 @@ COPY package.json package-lock.json ./
 COPY . .
 
 # build app
-#RUN nest build
+RUN nest build
 
 # remove devDependencies
 #RUN npm --frozen-lockfile --prefer-offline --silent --prod
